@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rishabh | Data Science Portfolio</title>
+  <meta name="description" content="Rishabh - Data Science & Backend/Web Projects Portfolio" />
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.08);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.72);
+      --muted2: rgba(255,255,255,0.62);
+      --accent: #4ea7ff;
+      --accent2: #7c5cff;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --radius: 16px;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(78,167,255,0.20), transparent 60%),
+        radial-gradient(800px 500px at 90% 0%, rgba(124,92,255,0.22), transparent 55%),
+        radial-gradient(900px 700px at 50% 100%, rgba(50,255,190,0.10), transparent 60%),
+        linear-gradient(180deg, #070b14 0%, var(--bg) 50%, #070b14 100%);
+      line-height: 1.55;
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .container{
+      max-width: 980px;
+      padding: 28px 18px 60px 18px;
+      margin: 0 auto;
+    }
+
+    header{
+      margin-top: 6px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .badge{
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.25);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #ffffff, var(--accent));
+      box-shadow: 0 0 0 3px rgba(78,167,255,0.18);
+    }
+
+    h1{
+      margin: 14px 0 4px 0;
+      font-size: 40px;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+    }
+
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 70ch;
+    }
+
+    .top-actions{
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn{
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: transform 140ms ease, background 140ms ease;
+    }
+
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.09);
+      text-decoration: none;
+    }
+
+    .btn.primary{
+      border-color: rgba(78,167,255,0.35);
+      background: linear-gradient(90deg, rgba(78,167,255,0.20), rgba(124,92,255,0.18));
+    }
+
+    .grid{
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      padding: 18px;
+    }
+
+    .card h2{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .span-7{ grid-column: span 7; }
+    .span-5{ grid-column: span 5; }
+    .span-12{ grid-column: span 12; }
+
+    .pill-row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill{
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: rgba(255,255,255,0.82);
+      background: rgba(0,0,0,0.22);
+    }
+
+    .section{
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .section h3{
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .section .muted{ color: var(--muted); font-size: 14px; }
+
+    .project{
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.18);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+
+    .project h4{
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .project p{
+      margin: 8px 0 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer{
+      margin-top: 18px;
+      color: var(--muted2);
+      font-size: 13px;
+      text-align: center;
+      padding: 18px;
+    }
+
+    .small{
+      font-size: 13px;
+      color: var(--muted2);
+    }
+
+    @media (max-width: 840px){
+      h1{ font-size: 34px; }
+      .span-7{ grid-column: span 12; }
+      .span-5{ grid-column: span 12; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .btn{ transition: none; }
+      .btn:hover{ transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge"><span class="dot"></span><span>B.Tech CSE (Data Science) · 2nd Semester</span></div>
+      <h1>Rishabh</h1>
+      <p class="subtitle">I build clean, structured backend/web projects and data science notebooks with an emphasis on clarity, feature engineering, and actionable results.</p>
+
+      <div class="top-actions">
+        <a class="btn primary" href="https://github.com/rawatrishabh2849-alt" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="mailto:rawatrishabh2849@gmail.com">Email</a>
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#skills">Skills</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="card span-7">
+        <h2>About</h2>
+        <p>I am a Computer Science & Engineering (Data Science) student at Dev Bhoomi Uttarakhand University. I enjoy problem-solving through code, presenting technical topics in a simple way, and improving projects by debugging and structuring them well.</p>
+      </div>
+      <div class="card span-5">
+        <h2>Location</h2>
+        <p>Ramnagar, Uttarakhand, India — a scenic town near Jim Corbett National Park.</p>
+        <div class="pill-row">
+          <span class="pill">India</span>
+          <span class="pill">Uttarakhand</span>
+          <span class="pill">Ramnagar</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="skills">
+      <h3>Skills</h3>
+      <div class="muted">Programming and tooling I use most often.</div>
+
+      <div class="project">
+        <h4>Programming</h4>
+        <p>Python (Intermediate), C, HTML, CSS, JavaScript, SQL</p>
+      </div>
+
+      <div class="project">
+        <h4>Libraries and Tools</h4>
+        <p>pandas, scikit-learn, matplotlib, VS Code, Jupyter Notebook</p>
+      </div>
+
+      <div class="project">
+        <h4>Workflow Strengths</h4>
+        <p>Backend development, feature engineering, linear regression modeling, technical troubleshooting, and writing clear step-by-step explanations.</p>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h3>Projects</h3>
+      <div class="muted">A few things I have built and presented.</div>
+
+      <div class="project">
+        <h4>House Price Prediction</h4>
+        <p>Built two Jupyter notebooks (with and without feature engineering) using Linear Regression. Focused on data cleaning, feature engineering, and smooth, error-free execution.</p>
+        <div class="pill-row">
+          <span class="pill">pandas</span>
+          <span class="pill">scikit-learn</span>
+          <span class="pill">matplotlib</span>
+          <span class="pill">Linear Regression</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h4>Food Ordering Website</h4>
+        <p>Dual-mode ordering system. Backend in C with JSON handling and a frontend in HTML/CSS/JavaScript, designed for clarity and structured integration.</p>
+        <div class="pill-row">
+          <span class="pill">C</span>
+          <span class="pill">JSON</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h4>Technical Presentations</h4>
+        <p>Delivered structured talks on backend/web integration and data science concepts, focusing on accessibility and clear communication.</p>
+        <div class="pill-row">
+          <span class="pill">Communication</span>
+          <span class="pill">Teaching</span>
+          <span class="pill">Structure</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <h3>Education</h3>
+      <div class="project">
+        <h4>B.Tech in Computer Science & Engineering (Data Science)</h4>
+        <p>Dev Bhoomi Uttarakhand University · Currently in 2nd semester</p>
+      </div>
+    </section>
+
+    <section class="section" id="interests">
+      <h3>Interests</h3>
+      <div class="project">
+        <p>Data science prediction models and feature engineering, backend/web development, technical troubleshooting, and writing in simple clear language.</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h3>Contact</h3>
+      <div class="project">
+        <p><strong>GitHub:</strong> <a href="https://github.com/rawatrishabh2849-alt" target="_blank" rel="noreferrer">github.com/rawatrishabh2849-alt</a></p>
+        <p><strong>Email:</strong> <a href="mailto:rawatrishabh2849@gmail.com">rawatrishabh2849@gmail.com</a></p>
+        <p class="small">Tip: Replace the GitHub username and email in this file before publishing.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>Made by Rishabh · Portfolio</div>
+    </footer>
+  </div>
+</body>
+</html>
